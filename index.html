@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPI // Spatial Clarity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* Iridescent Mesh Background approximation */
+      .iridescent-mesh {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: 
+          radial-gradient(at 0% 0%, hsla(203, 92%, 92%, 1) 0, transparent 50%),
+          radial-gradient(at 50% 0%, hsla(271, 81%, 95%, 1) 0, transparent 50%),
+          radial-gradient(at 100% 0%, hsla(186, 100%, 93%, 1) 0, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(190, 100%, 95%, 1) 0, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(242, 100%, 96%, 1) 0, transparent 50%);
+        background-attachment: fixed;
+      }
+
+      /* Advanced Glassmorphism */
+      .glass {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 
+          0 4px 24px -1px rgba(0, 0, 0, 0.05),
+          inset 0 0 12px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .glass-dark {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(60px) saturate(200%);
+        -webkit-backdrop-filter: blur(60px) saturate(200%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Text Clarity for bright backgrounds */
+      .text-balance {
+        text-wrap: balance;
+      }
+
+      .text-vision {
+        color: #1d1d1f; /* Apple's dark gray for text on light backgrounds */
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.1); border-radius: 10px; }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "framer-motion": "https://esm.sh/framer-motion@^12.34.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div class="iridescent-mesh"></div>
+    <div id="root"></div>
+  </body>
+</html>
