@@ -9,6 +9,10 @@ export interface AppConfig {
   transparency: number;
 }
 
+// Added BuildingType and BuildingProps to resolve module errors in components/BuildingSilhouette.tsx
+/**
+ * Defines the specific architectural landmarks used for the background visualization.
+ */
 export enum BuildingType {
   TRX = 'TRX',
   TWIN_TOWERS = 'TWIN_TOWERS',
@@ -16,28 +20,10 @@ export enum BuildingType {
   WARISAN_MERDEKA = 'WARISAN_MERDEKA'
 }
 
+/**
+ * Props for the BuildingSilhouette component.
+ */
 export interface BuildingProps {
   type: BuildingType;
   delay: number;
-}
-
-export enum Page {
-  LANDING = 'landing',
-  LOGIN = 'login',
-  DASHBOARD = 'dashboard'
-}
-
-export enum Tab {
-  MAP = 'map',
-  ACTIVITIES = 'activities',
-  SETTINGS = 'settings'
-}
-
-export interface NearbyIssue {
-  id: string;
-  title: string;
-  status: 'Fixed' | 'Pending' | 'In Progress';
-  distance: string;
-  color: string;
-  date?: string;
 }
